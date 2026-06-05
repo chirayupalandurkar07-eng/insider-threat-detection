@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insider Threat Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+        h1 { color: #58a6ff; text-align: center; }
+        .subtitle { text-align: center; color: #8b949e; margin-bottom: 30px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { background: #161b22; color: #58a6ff; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #21262d; }
+        tr:hover { background: #161b22; cursor: pointer; }
+        .critical { color: #ff4444; font-weight: bold; }
+        .high { color: #ff8c00; font-weight: bold; }
+        .medium { color: #ffd700; font-weight: bold; }
+        .score-bar { background: #21262d; border-radius: 4px; height: 8px; width: 100px; display: inline-block; }
+        .score-fill { height: 8px; border-radius: 4px; }
+        .report-box { display:none; background: #161b22; border: 1px solid #30363d; 
+                      border-radius: 8px; padding: 20px; margin-top: 10px; white-space: pre-wrap; }
+        .stats { display: flex; gap: 20px; margin-bottom: 30px; justify-content: center; }
+        .stat-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; 
+                     padding: 20px; text-align: center; min-width: 150px; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #58a6ff; }
+        .stat-label { color: #8b949e; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>🛡️ Insider Threat Detection System</h1>
+    <p class="subtitle">AI-Powered Behavioural Analysis | CERT r4.2 Dataset</p>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number" style="color:#ff4444">3</div>
+            <div class="stat-label">Critical Users</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" style="color:#ff8c00">3</div>
+            <div class="stat-label">High Risk Users</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" style="color:#ffd700">4</div>
+            <div class="stat-label">Medium Risk Users</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1000</div>
+            <div class="stat-label">Total Users Monitored</div>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Risk Score</th>
+            <th>Threat Level</th>
+            <th>AI Assessment</th>
+        </tr>
+
+        <tr onclick="toggle('AJF0370')">
+            <td>AJF0370</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:100.0px; background:#ff4444'></div>
+                </div>
+                100.0
+            </td>
+            <td><span class='critical'>● CRITICAL</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='AJF0370' class='report-box'>## Threat Assessment: User AJF0370
+
+**Threat Level: CRITICAL**
+
+**Most Suspicious Behavior Pattern:** Extreme USB/device activity (8,502 events) combined with massive file access (11,053 events) indicates potential large-scale data exfiltration. The 26% after-hours logon rate suggests deliberate evasion of monitoring.
+
+**Recommended Actions:**
+1. Immediately isolate user's endpoint and revoke USB privileges
+2. Preserve forensic evidence and analyze USB transfer logs
+3. Correlate file access with sensitive data repositories
+4. Engage HR and Legal for formal investigation
+5. Review DLP alerts for confirmed data transfers
+
+This pattern strongly suggests active data theft in progress.</div>
+            </td>
+        </tr>
+
+        <tr onclick="toggle('HSB0196')">
+            <td>HSB0196</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:92.35px; background:#ff4444'></div>
+                </div>
+                92.35
+            </td>
+            <td><span class='critical'>● CRITICAL</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='HSB0196' class='report-box'>## Threat Assessment: HSB0196
+
+**Threat Level: CRITICAL**
+
+**Most Suspicious Behaviour Pattern:** The USB/device event count (7,595) is extraordinarily anomalous—this volume indicates potential mass data exfiltration via removable media. Combined with 11,627 file access events, this suggests systematic data harvesting.
+
+**Recommended Actions:**
+1. Immediately disable user's USB port access and revoke privileged credentials
+2. Forensically image workstation and audit all accessed files
+3. Correlate USB timestamps with file access logs to identify exfiltrated data
+4. Initiate HR/Legal coordination for potential insider threat investigation
+5. Review DLP alerts for this user</div>
+            </td>
+        </tr>
+
+        <tr onclick="toggle('LBH0942')">
+            <td>LBH0942</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:90.32px; background:#ff4444'></div>
+                </div>
+                90.32
+            </td>
+            <td><span class='critical'>● CRITICAL</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='LBH0942' class='report-box'>## Threat Assessment: LBH0942
+
+**Threat Level: HIGH**
+
+**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (7,785 events) paired with high file access volume (10,889 events) indicates potential large-scale data exfiltration. The ratio of USB events to logons (~6:1) is severely abnormal, suggesting bulk data transfers to removable media.
+
+**Recommended Actions:**
+- Immediately audit USB device serial numbers and file transfer logs
+- Correlate file access with sensitive data repositories
+- Review DLP alerts for this user
+- Consider discreet endpoint isolation pending investigation
+- Interview user's manager regarding job responsibilities justifying this activity</div>
+            </td>
+        </tr>
+
+        <tr onclick="toggle('DLM0051')">
+            <td>DLM0051</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:88.86px; background:#ff8c00'></div>
+                </div>
+                88.86
+            </td>
+            <td><span class='high'>● HIGH</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='DLM0051' class='report-box'>## Threat Assessment: DLM0051
+
+**Threat Level: CRITICAL**
+
+**Most Suspicious Behaviour Pattern:** Extremely high USB/device activity (7,533 events) combined with massive file access (10,673 events) indicates likely data exfiltration. The ratio of USB events to logons (~5.5:1) is anomalous and suggests bulk data transfers to removable media.
+
+**Recommended Actions:**
+1. Immediately isolate user's endpoint and revoke USB privileges
+2. Forensically image workstation and audit accessed files
+3. Correlate file access with sensitive data repositories
+4. Review DLP logs for data transfer patterns
+5. Initiate HR/Legal coordination for potential investigation</div>
+            </td>
+        </tr>
+
+        <tr onclick="toggle('HPH0075')">
+            <td>HPH0075</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:75.72px; background:#ff8c00'></div>
+                </div>
+                75.72
+            </td>
+            <td><span class='high'>● HIGH</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='HPH0075' class='report-box'>## Threat Assessment: HPH0075
+
+**Threat Level: HIGH**
+
+**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (6,345 events) combined with high file access volume (9,323 events) suggests potential data exfiltration via removable media. The ratio of USB events to logons (5.6:1) is significantly elevated.
+
+**Recommended Actions for SOC Team:**
+1. Immediately audit USB device logs to identify connected devices and data transfer volumes
+2. Review file access patterns for sensitive/classified data
+3. Correlate with DLP alerts for outbound data movement
+4. Consider endpoint isolation pending investigation</div>
+            </td>
+        </tr>
+
+        <tr onclick="toggle('MOH0273')">
+            <td>MOH0273</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:74.97px; background:#ff8c00'></div>
+                </div>
+                74.97
+            </td>
+            <td><span class='high'>● HIGH</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='MOH0273' class='report-box'>## Threat Assessment: MOH0273
+
+**Threat Level: HIGH**
+
+**Most Suspicious Behavior Pattern:** Extremely anomalous USB/device activity (6,295 events) combined with high file access volume (9,306 events) suggests potential large-scale data exfiltration via removable media. The complete absence of after-hours activity indicates deliberate operation within normal business hours to avoid detection.
+
+**Recommended Actions:**
+- Immediately audit USB device logs for data transfer volumes and file types
+- Review DLP alerts for sensitive file movements
+- Correlate file access with user's job responsibilities
+- Consider endpoint isolation pending investigation
+- Interview user's manager regarding legitimate business need</div>
+            </td>
+        </tr>
+
+        <tr onclick="toggle('ZKS0899')">
+            <td>ZKS0899</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:69.81px; background:#ffd700'></div>
+                </div>
+                69.81
+            </td>
+            <td><span class='medium'>● MEDIUM</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='ZKS0899' class='report-box'>## Threat Assessment: ZKS0899
+
+**Threat Level: HIGH**
+
+**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (5,968 events) combined with high file access volume (8,537 events) suggests potential data exfiltration via removable media. The ratio of USB events to logons (7.75:1) is significantly elevated.
+
+**Recommended Actions:**
+1. Immediately audit USB device logs for unauthorized storage devices
+2. Review file access patterns for sensitive/bulk data downloads
+3. Correlate file types accessed with data transferred to USB devices
+4. Interview user's manager regarding business justification
+5. Consider temporary DLP controls on this account</div>
+            </td>
+        </tr>
+
+        <tr onclick="toggle('SAA0999')">
+            <td>SAA0999</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:69.79px; background:#ffd700'></div>
+                </div>
+                69.79
+            </td>
+            <td><span class='medium'>● MEDIUM</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='SAA0999' class='report-box'>## Threat Assessment: SAA0999
+
+**Threat Level: HIGH**
+
+**Most Suspicious Behaviour Pattern:** Extremely elevated USB/device activity (5,971 events) combined with high file access volume (8,468 events) strongly indicates potential data exfiltration via removable media. The absence of after-hours activity suggests this is occurring brazenly during normal business hours.
+
+**Recommended Actions:**
+- Immediately audit USB event logs for file transfer details and device identifiers
+- Review file access patterns for sensitive/bulk data targeting
+- Implement temporary DLP block on removable storage for this user
+- Conduct forensic imaging of assigned workstation
+- Initiate HR coordination for discrete interview</div>
+            </td>
+        </tr>
+
+        <tr onclick="toggle('DBB0384')">
+            <td>DBB0384</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:69.55px; background:#ffd700'></div>
+                </div>
+                69.55
+            </td>
+            <td><span class='medium'>● MEDIUM</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='DBB0384' class='report-box'>## Threat Assessment: DBB0384
+
+**Threat Level: HIGH**
+
+**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (5,932 events) combined with high file access volume (8,543 events) suggests potential data exfiltration via removable media. The ratio of USB events to logons (~8.5:1) is a significant red flag for bulk data transfer.
+
+**Recommended Actions:**
+1. Immediately audit USB device logs for file copy operations and device serial numbers
+2. Review file access patterns for sensitive/classified data
+3. Correlate with DLP alerts and network egress logs
+4. Consider temporary revocation of removable media privileges pending investigation</div>
+            </td>
+        </tr>
+
+        <tr onclick="toggle('QRM0739')">
+            <td>QRM0739</td>
+            <td>
+                <div class='score-bar'>
+                    <div class='score-fill' style='width:69.11px; background:#ffd700'></div>
+                </div>
+                69.11
+            </td>
+            <td><span class='medium'>● MEDIUM</span></td>
+            <td>Click to expand ▼</td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='QRM0739' class='report-box'>## Threat Assessment: QRM0739
+
+**Threat Level: HIGH**
+
+**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (5,962 events) paired with high file access volume (8,401 events) indicates potential large-scale data exfiltration. The ratio of USB events to logons (~8:1) is highly irregular and suggests systematic data copying.
+
+**Recommended Actions:**
+1. Immediately audit USB device logs to identify what data was transferred and to which devices
+2. Review file access patterns for sensitive/classified repositories
+3. Correlate with DLP alerts and interview user's manager
+4. Consider temporary access suspension pending investigation</div>
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        function toggle(id) {
+            var el = document.getElementById(id);
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

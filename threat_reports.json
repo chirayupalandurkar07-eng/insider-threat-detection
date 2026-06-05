@@ -1,0 +1,52 @@
+[
+  {
+    "user": "AJF0370",
+    "risk_score": 100.0,
+    "report": "## Threat Assessment: User AJF0370\n\n**Threat Level: CRITICAL**\n\n**Most Suspicious Behavior Pattern:** Extreme USB/device activity (8,502 events) combined with massive file access (11,053 events) indicates potential large-scale data exfiltration. The 26% after-hours logon rate suggests deliberate evasion of monitoring.\n\n**Recommended Actions:**\n1. Immediately isolate user's endpoint and revoke USB privileges\n2. Preserve forensic evidence and analyze USB transfer logs\n3. Correlate file access with sensitive data repositories\n4. Engage HR and Legal for formal investigation\n5. Review DLP alerts for confirmed data transfers\n\nThis pattern strongly suggests active data theft in progress."
+  },
+  {
+    "user": "HSB0196",
+    "risk_score": 92.35,
+    "report": "## Threat Assessment: HSB0196\n\n**Threat Level: CRITICAL**\n\n**Most Suspicious Behaviour Pattern:** The USB/device event count (7,595) is extraordinarily anomalous\u2014this volume indicates potential mass data exfiltration via removable media. Combined with 11,627 file access events, this suggests systematic data harvesting.\n\n**Recommended Actions:**\n1. Immediately disable user's USB port access and revoke privileged credentials\n2. Forensically image workstation and audit all accessed files\n3. Correlate USB timestamps with file access logs to identify exfiltrated data\n4. Initiate HR/Legal coordination for potential insider threat investigation\n5. Review DLP alerts for this user"
+  },
+  {
+    "user": "LBH0942",
+    "risk_score": 90.32,
+    "report": "## Threat Assessment: LBH0942\n\n**Threat Level: HIGH**\n\n**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (7,785 events) paired with high file access volume (10,889 events) indicates potential large-scale data exfiltration. The ratio of USB events to logons (~6:1) is severely abnormal, suggesting bulk data transfers to removable media.\n\n**Recommended Actions:**\n- Immediately audit USB device serial numbers and file transfer logs\n- Correlate file access with sensitive data repositories\n- Review DLP alerts for this user\n- Consider discreet endpoint isolation pending investigation\n- Interview user's manager regarding job responsibilities justifying this activity"
+  },
+  {
+    "user": "DLM0051",
+    "risk_score": 88.86,
+    "report": "## Threat Assessment: DLM0051\n\n**Threat Level: CRITICAL**\n\n**Most Suspicious Behaviour Pattern:** Extremely high USB/device activity (7,533 events) combined with massive file access (10,673 events) indicates likely data exfiltration. The ratio of USB events to logons (~5.5:1) is anomalous and suggests bulk data transfers to removable media.\n\n**Recommended Actions:**\n1. Immediately isolate user's endpoint and revoke USB privileges\n2. Forensically image workstation and audit accessed files\n3. Correlate file access with sensitive data repositories\n4. Review DLP logs for data transfer patterns\n5. Initiate HR/Legal coordination for potential investigation"
+  },
+  {
+    "user": "HPH0075",
+    "risk_score": 75.72,
+    "report": "## Threat Assessment: HPH0075\n\n**Threat Level: HIGH**\n\n**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (6,345 events) combined with high file access volume (9,323 events) suggests potential data exfiltration via removable media. The ratio of USB events to logons (5.6:1) is significantly elevated.\n\n**Recommended Actions for SOC Team:**\n1. Immediately audit USB device logs to identify connected devices and data transfer volumes\n2. Review file access patterns for sensitive/classified data\n3. Correlate with DLP alerts for outbound data movement\n4. Consider endpoint isolation pending investigation"
+  },
+  {
+    "user": "MOH0273",
+    "risk_score": 74.97,
+    "report": "## Threat Assessment: MOH0273\n\n**Threat Level: HIGH**\n\n**Most Suspicious Behavior Pattern:** Extremely anomalous USB/device activity (6,295 events) combined with high file access volume (9,306 events) suggests potential large-scale data exfiltration via removable media. The complete absence of after-hours activity indicates deliberate operation within normal business hours to avoid detection.\n\n**Recommended Actions:**\n- Immediately audit USB device logs for data transfer volumes and file types\n- Review DLP alerts for sensitive file movements\n- Correlate file access with user's job responsibilities\n- Consider endpoint isolation pending investigation\n- Interview user's manager regarding legitimate business need"
+  },
+  {
+    "user": "ZKS0899",
+    "risk_score": 69.81,
+    "report": "## Threat Assessment: ZKS0899\n\n**Threat Level: HIGH**\n\n**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (5,968 events) combined with high file access volume (8,537 events) suggests potential data exfiltration via removable media. The ratio of USB events to logons (7.75:1) is significantly elevated.\n\n**Recommended Actions:**\n1. Immediately audit USB device logs for unauthorized storage devices\n2. Review file access patterns for sensitive/bulk data downloads\n3. Correlate file types accessed with data transferred to USB devices\n4. Interview user's manager regarding business justification\n5. Consider temporary DLP controls on this account"
+  },
+  {
+    "user": "SAA0999",
+    "risk_score": 69.79,
+    "report": "## Threat Assessment: SAA0999\n\n**Threat Level: HIGH**\n\n**Most Suspicious Behaviour Pattern:** Extremely elevated USB/device activity (5,971 events) combined with high file access volume (8,468 events) strongly indicates potential data exfiltration via removable media. The absence of after-hours activity suggests this is occurring brazenly during normal business hours.\n\n**Recommended Actions:**\n- Immediately audit USB event logs for file transfer details and device identifiers\n- Review file access patterns for sensitive/bulk data targeting\n- Implement temporary DLP block on removable storage for this user\n- Conduct forensic imaging of assigned workstation\n- Initiate HR coordination for discrete interview"
+  },
+  {
+    "user": "DBB0384",
+    "risk_score": 69.55,
+    "report": "## Threat Assessment: DBB0384\n\n**Threat Level: HIGH**\n\n**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (5,932 events) combined with high file access volume (8,543 events) suggests potential data exfiltration via removable media. The ratio of USB events to logons (~8.5:1) is a significant red flag for bulk data transfer.\n\n**Recommended Actions:**\n1. Immediately audit USB device logs for file copy operations and device serial numbers\n2. Review file access patterns for sensitive/classified data\n3. Correlate with DLP alerts and network egress logs\n4. Consider temporary revocation of removable media privileges pending investigation"
+  },
+  {
+    "user": "QRM0739",
+    "risk_score": 69.11,
+    "report": "## Threat Assessment: QRM0739\n\n**Threat Level: HIGH**\n\n**Most Suspicious Behaviour Pattern:** Extremely anomalous USB/device activity (5,962 events) paired with high file access volume (8,401 events) indicates potential large-scale data exfiltration. The ratio of USB events to logons (~8:1) is highly irregular and suggests systematic data copying.\n\n**Recommended Actions:**\n1. Immediately audit USB device logs to identify what data was transferred and to which devices\n2. Review file access patterns for sensitive/classified repositories\n3. Correlate with DLP alerts and interview user's manager\n4. Consider temporary access suspension pending investigation"
+  }
+]
