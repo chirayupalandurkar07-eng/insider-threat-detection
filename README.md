@@ -10,10 +10,26 @@ to identify potential insider threats, powered by AI-generated threat assessment
 - Visualises results in an interactive dashboard
 
 ## Detection Approach
-Initial volume-based scoring flagged 0 of 70 known malicious users, revealing 
-that real insider threats deliberately stay within normal usage ranges. 
-The model was rebuilt using deviation-from-personal-baseline scoring, 
-improving detection to 12 of 70 known malicious users using logon behaviour alone.
+
+Built a three-model ensemble where each model targets a different insider threat archetype:
+
+| Model | Targets | Signal Used |
+|-------|---------|-------------|
+| Model 1 | Extreme after-hours access | After-hours ratio + volatility |
+| Model 2 | Multi-signal anomalies | Percentile rank across all signals |
+| Model 3 | USB/file exfiltration | Signal count thresholds |
+
+### Results Against Ground Truth (CERT r4.2 Answer Key)
+
+| Version | Approach | Detected | Flagged |
+|---------|----------|----------|---------|
+| v1 | Volume-based | 0/70 (0%) | 10 |
+| v2 | Baseline deviation | 12/70 (17%) | 70 |
+| v3 | Multi-model ensemble | 42/70 (60%) | 133 |
+
+**Key finding:** Real insider threats deliberately stay within normal usage ranges. 
+A single model cannot catch all threat archetypes — different attack patterns 
+require different detection strategies.
 
 ## Tech Stack
 - Python, Pandas
