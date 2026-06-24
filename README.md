@@ -42,6 +42,16 @@ require different detection strategies.
 - `dashboard.html` — Interactive threat dashboard
 - `threat_reports.json` — AI-generated threat assessments
 
+---
+
+## Future Plans
+
+- [ ] Run formal sklearn evaluation metrics (precision_score, recall_score, confusion_matrix) and publish results
+- [ ] Tune ensemble thresholds to improve precision beyond current 31.6%
+- [ ] Add time-series analysis to detect gradual behavioural escalation over weeks
+- [ ] Test against real enterprise log data rather than simulated dataset
+- [ ] Integrate with a SIEM (Splunk/Microsoft Sentinel) for live alert ingestion
+
 ## Setup
 1. Clone the repo
 2. Create a `.env` file with your `ANTHROPIC_API_KEY`
